@@ -1,0 +1,13 @@
+<%= render layout: "wrapper" do %>
+  <p>Cache Fragment Name: <%= cache_fragment_name(@post) %></p>
+  <%= cache @post do %>
+    <p>This is the ABOUT page within the wrapper layout with @post as a cache key.</p>
+  <% end %>
+  <%= cache do %>
+    <p>This is the ABOUT page within the wrapper layout WITHOUT @post as a cache key.</p>
+  <% end %>
+<% end %>
+
+<%= cache @post do %>
+  <p>This is the ABOUT page OUTSIDE the wrapper layout with @post as a cache key.</p>
+<% end %>

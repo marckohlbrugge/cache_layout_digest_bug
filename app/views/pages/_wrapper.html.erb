@@ -1,0 +1,7 @@
+<div style="text-align: center; padding: 5em;">
+  <%= yield %>
+</div>
+
+<% unless Rails.application.config.action_controller.perform_caching %>
+  <strong style="color: red">Make sure caching is enabled to see the bug in action!</strong>
+<% end %>
